@@ -57,19 +57,19 @@ export function Drivers() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
         {list.map((d, i) => (
           <Reveal key={d.id} delay={i * 90}>
-          <div className="wv-card" style={{ border: '1px solid #2A251D', background: '#0B0A08', padding: 32 }}>
-            <div style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
+          <div className="wv-card" style={{ border: '1px solid #2A251D', background: '#0B0A08', padding: 32, display: 'flex', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 24 }}>
               <div
                 style={{
-                  width: 84,
-                  height: 84,
+                  width: 72,
+                  height: 72,
                   borderRadius: '50%',
                   background: '#16130E',
                   border: '1px solid #3A342A',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: 10,
+                  fontSize: 9,
                   letterSpacing: '0.2em',
                   color: '#8E897F',
                   flex: 'none',
@@ -77,49 +77,46 @@ export function Drivers() {
               >
                 {t('photo')}
               </div>
-              <div>
-                <h3 className="wv-serif" style={{ margin: 0, fontSize: 24, fontWeight: 400 }}>
-                  {d.name}
-                </h3>
-                <div
-                  style={{
-                    marginTop: 8,
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 6,
-                    fontSize: 11,
-                    letterSpacing: '0.18em',
-                    color: ACCENT,
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  <CertifiedBadge />
-                  {t('certified')}
-                </div>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '8px 16px',
+                  border: `1px solid ${ACCENT}`,
+                  borderRadius: 4,
+                }}
+              >
+                <CertifiedBadge />
+                <span style={{ fontSize: 12, letterSpacing: '0.15em', color: ACCENT, textTransform: 'uppercase', fontWeight: 600 }}>
+                  VTC
+                </span>
               </div>
             </div>
 
-            <div
-              style={{
-                marginTop: 28,
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-                gap: 16,
-                borderTop: '1px solid #2A251D',
-                paddingTop: 24,
-              }}
-            >
-              <div>
-                <div style={{ fontSize: 11, letterSpacing: '0.2em', color: '#8E897F', textTransform: 'uppercase' }}>{t('langsLabel')}</div>
-                <div style={{ marginTop: 6, fontSize: 15 }}>{d.langs}</div>
+            <div style={{ marginBottom: 24 }}>
+              <div style={{ fontSize: 11, letterSpacing: '0.2em', color: '#8E897F', textTransform: 'uppercase', marginBottom: 8 }}>
+                {t('expLabel')}
               </div>
-              <div>
-                <div style={{ fontSize: 11, letterSpacing: '0.2em', color: '#8E897F', textTransform: 'uppercase' }}>{t('expLabel')}</div>
-                <div style={{ marginTop: 6, fontSize: 15 }}>{d.exp}</div>
+              <div className="wv-serif" style={{ fontSize: 32, fontWeight: 400, color: ACCENT, margin: 0 }}>
+                {d.exp}
               </div>
-              <div style={{ gridColumn: 'span 2' }}>
-                <div style={{ fontSize: 11, letterSpacing: '0.2em', color: '#8E897F', textTransform: 'uppercase' }}>{t('specLabel')}</div>
-                <div style={{ marginTop: 6, fontSize: 15, color: '#CFC9BD' }}>{d.spec}</div>
+            </div>
+
+            <div style={{ flex: 1 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 20, borderTop: '1px solid #2A251D', paddingTop: 20 }}>
+                <div>
+                  <div style={{ fontSize: 11, letterSpacing: '0.2em', color: '#8E897F', textTransform: 'uppercase' }}>
+                    {t('langsLabel')}
+                  </div>
+                  <div style={{ marginTop: 6, fontSize: 15 }}>{d.langs}</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: 11, letterSpacing: '0.2em', color: '#8E897F', textTransform: 'uppercase' }}>
+                    {t('specLabel')}
+                  </div>
+                  <div style={{ marginTop: 6, fontSize: 15, color: '#CFC9BD' }}>{d.spec}</div>
+                </div>
               </div>
             </div>
 
