@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "WVion Services — Die Kunst anzukommen.",
+    "description": "Private VIP-Chauffeure im Mercedes-Benz in Genf. Transfers, Stundenmiete, Concierge und Schutz. Rund um die Uhr verfügbar."
+  },
+  "nav": {
+    "tagline": "SERVICES · GENF",
+    "services": "Services",
+    "fleet": "Flotte",
+    "drivers": "Chauffeure",
+    "allin": "All-in-Now",
+    "configure": "Konfigurieren",
+    "book": "Buchen",
+    "langLabel": "Sprache"
+  },
+  "hero": {
+    "eyebrow": "Privattransport · Schutz · Concierge",
+    "titleLine": "Die Kunst",
+    "titleEm": "anzukommen.",
+    "lede": "Private Chauffeure im Mercedes-Benz S-Klasse, E-Klasse und Van. Rund um die Uhr in Genf, in der ganzen Schweiz und zu Europas schönsten Zielen.",
+    "ctaMain": "Meine Mission zusammenstellen",
+    "ctaUrgent": "Notfall All-in-Now",
+    "sealAlt": "Chauffeur mit weissen Handschuhen öffnet die Tür"
+  },
+  "allin": { "badge": "HÖCHSTE PRIORITÄT", "title": "Mission", "titleEm": "All-in-Now.", "cta": "Mission auslösen" },
+  "fleet": {
+    "eyebrow": "Die Flotte", "title": "Mercedes-Benz,", "titleEm": "neueste Generationen.",
+    "vehicles": {
+      "e21": { "price": "ab 110 CHF" },
+      "e24": { "price": "ab 110 CHF" },
+      "van": { "price": "ab 130 CHF" },
+      "s25": { "price": "ab 160 CHF" }
+    }
+  },
+  "drivers": { "eyebrow": "Unsere Chauffeure", "title": "Wählen Sie,", "titleEm": "wer Sie fährt.", "cta": "Mit diesem Chauffeur buchen" },
+  "teaser": { "eyebrow": "Der Konfigurator", "title": "Stellen Sie", "titleEm": "Ihre Mission zusammen.", "cta": "Konfigurator öffnen" },
+  "testimonials": { "eyebrow": "Kundenbewertungen", "title": "Sie vertrauen", "titleEm": "uns.", "lede": "Seit 2022 verlassen sich führende Unternehmen auf WVion für Transfers, Events und Executive Transport.", "list": [{ "id": "t1", "text": "WVion verwaltet unsere Executive Transfers in der Schweiz. Zuverlässigkeit und Professionalität bei jeder Mission.", "author": "Internationale Bank", "role": "Genf" }, { "id": "t2", "text": "Bei unseren Corporate Events und Roadshows koordiniert WVion mehrere Fahrzeuge nahtlos. Ein echter Partner.", "author": "Fortune-500-Unternehmen", "role": "Schweiz" }, { "id": "t3", "text": "Skiresorts, Flughafentransfers, Delegationen — WVion liefert überall Exzellenz. Sehr empfohlen.", "author": "Luxus-Hotelgruppe", "role": "Genfersee-Region" }] },
+  "config": { "continue": "Weiter →", "back": "← Zurück", "closeBtn": "Schliessen" }
+}

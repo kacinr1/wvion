@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "title": "WVion Services — The art of arriving.",
+    "description": "VIP private chauffeurs in Mercedes-Benz in Geneva. Transfers, hourly hire, concierge and protection. Available 24/7."
+  },
+  "nav": {
+    "tagline": "SERVICES · GENEVA",
+    "services": "Services",
+    "fleet": "Fleet",
+    "drivers": "Chauffeurs",
+    "allin": "All-in-Now",
+    "configure": "Configure",
+    "book": "Book",
+    "langLabel": "Language"
+  },
+  "hero": {
+    "eyebrow": "Private transport · Protection · Concierge",
+    "titleLine": "The art",
+    "titleEm": "of arriving.",
+    "lede": "Private chauffeurs in Mercedes-Benz S-Class, E-Class and Van. Available 24/7 in Geneva, across Switzerland and to Europe's finest destinations.",
+    "ctaMain": "Compose my mission",
+    "ctaUrgent": "All-in-Now emergency",
+    "sealAlt": "Chauffeur in white gloves opening the door"
+  },
+  "strip": {
+    "s1l": "Total availability",
+    "s2l": "Languages · FR EN AR RU DE",
+    "s3l": "Recent Mercedes-Benz fleet",
+    "s4l": "Certified VTC chauffeurs"
+  },
+  "formules": {
+    "title": "Your time,",
+    "titleEm": "your plan.",
+    "note": "For every plan from the half-day up, you choose your chauffeur from their profile.",
+    "signature": "SIGNATURE",
+    "fromPrice": "from 110 CHF",
+    "onQuote": "on request",
+    "cards": [
+      { "num": "01", "name": "Transfer", "desc": "Airport, station, hotel, appointment. Point A to point B, no compromise.", "price": "fromPrice" },
+      { "num": "02", "name": "Half-day", "desc": "Business meetings, private shopping, clinic. Chauffeur at your disposal.", "price": "fromPrice" },
+      { "num": "03", "name": "Monthly", "desc": "Private or corporate subscription in hour credits. Your dedicated chauffeur.", "price": "onQuote" },
+      { "num": "04", "name": "24/7 Escort", "desc": "A dedicated chauffeur, day and night, for the whole of your stay.", "price": "onQuote", "featured": true }
+    ]
+  },
+  "services": {
+    "eyebrow": "Our services",
+    "title": "Everything a journey",
+    "titleEm": "can become."
+  },
+  "allin": {
+    "badge": "ABSOLUTE PRIORITY",
+    "title": "Mission",
+    "titleEm": "All-in-Now.",
+    "lede": "A request that cannot wait? Every alarm goes off. The whole team mobilises to find an immediate solution, at any hour.",
+    "directLabel": "DIRECT LINE",
+    "directNote": "Our most exclusive service. Pricing on request.",
+    "cta": "Trigger a mission"
+  },
+  "fleet": {
+    "eyebrow": "The fleet",
+    "title": "Mercedes-Benz,",
+    "titleEm": "latest generations.",
+    "vehicles": {
+      "e21": { "tag": "Business · Transfers", "price": "from 110 CHF" },
+      "e24": { "tag": "Business · Roadshow", "price": "from 110 CHF" },
+      "van": { "tag": "Families · Groups · Ski", "price": "from 130 CHF" },
+      "s25": { "tag": "Signature · VIP", "price": "from 160 CHF" }
+    }
+  },
+  "drivers": {
+    "eyebrow": "Our chauffeurs",
+    "title": "Choose",
+    "titleEm": "who drives you.",
+    "note": "Every chauffeur has a profile: languages spoken, years of experience, specialities. Chauffeur selection from the half-day plan.",
+    "certified": "Certified chauffeur",
+    "langsLabel": "Languages",
+    "expLabel": "Experience",
+    "specLabel": "Specialities",
+    "cta": "Book with this chauffeur",
+    "protectionTitle": "Close protection",
+    "protectionDesc": "Provided by our licensed partners, subject to availability. Optional on every mission.",
+    "protectionCta": "Add to my mission →"
+  },
+  "teaser": {
+    "eyebrow": "The configurator",
+    "title": "Compose",
+    "titleEm": "your mission.",
+    "lede": "Plan, vehicle, chauffeur, options. A few choices, a single request, and our team handles the rest.",
+    "steps": ["Plan", "Vehicle", "Chauffeur", "Options", "Date & route", "Summary"],
+    "cta": "Open the configurator"
+  },
+  "testimonials": {
+    "eyebrow": "Client reviews",
+    "title": "They trust",
+    "titleEm": "us.",
+    "lede": "Since 2022, leading companies and organisations rely on WVion for transfers, events and executive transport.",
+    "list": [
+      { "id": "t1", "text": "WVion manages our executive transfers across Switzerland. Reliability, discretion and professionalism every single time.", "author": "International Bank", "role": "Geneva" },
+      { "id": "t2", "text": "For our corporate events and roadshows, WVion coordinates multiple vehicles seamlessly. A true partner.", "author": "Fortune 500 Company", "role": "Switzerland" },
+      { "id": "t3", "text": "Ski resorts, airport transfers, delegations — WVion delivers excellence in every scenario. Highly recommended.", "author": "Luxury Hotel Group", "role": "Lake Geneva" }
+    ]
+  },
+  "footer": {
+    "societeLabel": "COMPANY",
+    "contactLabel": "CONTACT",
+    "contact": "078 897 83 53\nWVionservice@hotmail.com\nBookings 24/7",
+    "servicesLabel": "SERVICES",
+    "services": "Airport & private jet transfers\nHourly hire\nAll-in-Now mission",
+    "languesLabel": "LANGUAGES",
+    "legal": "Legal notice · Privacy · Terms"
+  },
+  "config": {
+    "label": "CONFIGURATOR",
+    "close": "Close the configurator",
+    "stepWord": "Step",
+    "continue": "Continue →",
+    "back": "← Back",
+    "closeBtn": "Close",
+    "summary": { "formule": "Plan", "vehicule": "Vehicle", "chauffeur": "Chauffeur", "options": "Options" },
+    "none": "None",
+    "steps": {
+      "formule": "Plan", "vehicule": "Vehicle", "chauffeur": "Chauffeur",
+      "options": "Options", "quand": "Date & route", "recap": "Summary", "allin": "Emergency"
+    },
+    "formule": {
+      "title": "Which", "titleEm": "mission?",
+      "cards": [
+        { "id": "transfert", "label": "Transfer", "desc": "Airport, station, hotel. From point A to point B. Chauffeur assigned by WVion." },
+        { "id": "demi", "label": "Half-day", "desc": "A half-day at your disposal. You choose your chauffeur." },
+        { "id": "jour", "label": "Full day", "desc": "A full day at your disposal. You choose your chauffeur." },
+        { "id": "mensuel", "label": "Monthly", "desc": "Private or corporate subscription. Your dedicated chauffeur." },
+        { "id": "h24", "label": "24/7 Escort", "desc": "A dedicated chauffeur, day and night, for your whole stay." },
+        { "id": "allin", "label": "All-in-Now", "desc": "Absolute emergency. The whole team mobilises immediately." }
+      ],
+      "priority": "PRIORITY"
+    },
+    "vehicule": { "title": "Your", "titleEm": "vehicle." },
+    "chauffeur": {
+      "title": "Who", "titleEm": "drives you?",
+      "includedIn": "Included in your {form} plan.",
+      "choose": "Choose this chauffeur",
+      "selected": "✓ Selected",
+      "autoTitle": "Let WVion choose",
+      "autoDesc": "We assign the chauffeur best suited to your mission.",
+      "autoChoose": "Choose this option"
+    },
+    "options": { "title": "The", "titleEm": "details." },
+    "quand": {
+      "title": "When,", "titleEm": "and where?",
+      "date": "Date", "time": "Pick-up time",
+      "from": "Pick-up", "fromPh": "Geneva Airport, hotel…",
+      "to": "Destination", "toPh": "Address, resort, city…",
+      "pax": "Passengers", "flight": "Flight number (optional)", "flightPh": "LX 1234",
+      "contactEyebrow": "Your details",
+      "name": "Full name", "namePh": "First and last name",
+      "phone": "Phone", "phonePh": "+41 …",
+      "email": "Email (optional)", "emailPh": "you@example.ch",
+      "requiredNote": "Name and phone required so we can confirm your mission."
+    },
+    "recap": {
+      "eyebrow": "Summary",
+      "title": "Your", "titleEm": "mission.",
+      "estimate": "Estimate",
+      "send": "Send my request",
+      "sendNote": "Confirmation by a WVion team member. No payment at this step.",
+      "sending": "Sending…",
+      "errorTitle": "Could not send",
+      "errorNote": "Something went wrong. Try again or call us directly.",
+      "retry": "Try again",
+      "doneTitle": "Request", "doneTitleEm": "received.",
+      "doneNote": "A WVion team member will contact you [DÉLAI] to confirm your mission.",
+      "backToSite": "Back to site",
+      "rows": {
+        "formule": "Plan", "vehicule": "Vehicle", "chauffeur": "Chauffeur",
+        "options": "Options", "date": "Date", "trajet": "Route", "pax": "Passengers", "vol": "Flight",
+        "nom": "Name", "telephone": "Phone", "email": "Email"
+      },
+      "attributed": "Assigned by WVion",
+      "autoChoice": "WVion's choice",
+      "toPrecise": "To be confirmed",
+      "price": "[PRIX] CHF",
+      "onQuote": "On request"
+    },
+    "allinStep": {
+      "badge": "ALERT ACTIVE",
+      "title": "Mission", "titleEm": "All-in-Now.",
+      "lede": "Call the direct line, or leave your details: a manager calls you back immediately.",
+      "name": "Name", "phoneLabel": "Phone", "situation": "Your situation",
+      "trigger": "Trigger the mission",
+      "sending": "Transmitting…",
+      "doneTitle": "Alert", "doneTitleEm": "transmitted.",
+      "doneNote": "The whole team is mobilised. A manager calls you back immediately.",
+      "errorNote": "Transmission failed. Call the direct line immediately.",
+      "backToSite": "Back to site"
+    }
+  }
+}

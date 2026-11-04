@@ -1,0 +1,276 @@
+{
+  "meta": {
+    "title": "WVion Services — L'art d'arriver.",
+    "description": "Chauffeurs privés VIP en Mercedes-Benz à Genève. Transferts, mise à disposition, conciergerie et protection. Disponibles 24h/24."
+  },
+  "nav": {
+    "tagline": "SERVICES · GENÈVE",
+    "services": "Services",
+    "fleet": "Flotte",
+    "drivers": "Chauffeurs",
+    "allin": "All-in-Now",
+    "configure": "Configurer",
+    "book": "Réserver",
+    "langLabel": "Langue"
+  },
+  "hero": {
+    "eyebrow": "Transport privé · Protection · Conciergerie",
+    "titleLine": "L'art",
+    "titleEm": "d'arriver.",
+    "lede": "Chauffeurs privés en Mercedes-Benz Classe S, Classe E et Van. Disponibles 24h/24 à Genève, en Suisse et vers les plus belles destinations d'Europe.",
+    "ctaMain": "Composer ma mission",
+    "ctaUrgent": "Urgence All-in-Now",
+    "sealAlt": "Chauffeur en gants blancs ouvrant la portière"
+  },
+  "strip": {
+    "s1v": "24/24", "s1l": "Disponibilité totale",
+    "s2v": "5", "s2l": "Langues · FR EN AR RU DE",
+    "s3v": "2022–26", "s3l": "Flotte Mercedes-Benz récente",
+    "s4v": "100%", "s4l": "Chauffeurs certifiés VTC"
+  },
+  "formules": {
+    "title": "Votre temps,",
+    "titleEm": "votre formule.",
+    "note": "Pour chaque formule à partir de la demi-journée, vous choisissez votre chauffeur sur son profil.",
+    "signature": "SIGNATURE",
+    "fromPrice": "dès 110 CHF",
+    "onQuote": "sur devis",
+    "cards": [
+      { "num": "01", "name": "Transfert", "desc": "Aéroport, gare, hôtel, rendez-vous. Point A vers point B, sans compromis.", "price": "fromPrice" },
+      { "num": "02", "name": "Demi-journée", "desc": "Rendez-vous d'affaires, shopping privé, clinique. Chauffeur à disposition.", "price": "fromPrice" },
+      { "num": "03", "name": "Mensuel", "desc": "Abonnement privé ou corporate en crédits d'heures. Votre chauffeur attitré.", "price": "onQuote" },
+      { "num": "04", "name": "Accompagné 24h/24", "desc": "Un chauffeur dédié, jour et nuit, pendant toute la durée de votre séjour.", "price": "onQuote", "featured": true }
+    ]
+  },
+  "services": {
+    "eyebrow": "Nos services",
+    "title": "Tout ce qu'un trajet",
+    "titleEm": "peut devenir.",
+    "gallery": [
+      { "tag": "I · AÉROPORT", "caption": "Au pied de l'avion." },
+      { "tag": "IV · LIFESTYLE", "caption": "Les mains libres." },
+      { "tag": "V · CONCIERGERIE", "caption": "Le geste juste." }
+    ],
+    "groups": [
+      {
+        "num": "I", "title": "Aéroport & Voyage",
+        "items": [
+          { "t": "Accueil tarmac & jet privé", "d": "Votre chauffeur vous attend à la sortie de l'avion." },
+          { "t": "Attente & dépôt à l'aéroport", "d": "Accueil personnalisé en zone arrivée, dépôt au départ." },
+          { "t": "Check-in à domicile", "d": "Vos valises récupérées la veille, vous voyagez les mains libres." },
+          { "t": "Ski & Riviera", "d": "Courchevel, Verbier, Gstaad, Zermatt, Megève, Monaco." }
+        ]
+      },
+      {
+        "num": "II", "title": "Business",
+        "items": [
+          { "t": "Abonnement Corporate", "d": "Crédits d'heures mensuels, facturation entreprise." },
+          { "t": "Roadshows & délégations", "d": "Plusieurs véhicules coordonnés pour banques, investisseurs et organisations." },
+          { "t": "Chauffeur seul", "d": "Un chauffeur certifié pour conduire votre propre véhicule." }
+        ]
+      },
+      {
+        "num": "III", "title": "Événements",
+        "items": [
+          { "t": "Salons & Galas", "d": "Forfaits événementiels avec flotte dédiée." },
+          { "t": "Mariages", "d": "Classe S pour les mariés, Vans pour les invités." }
+        ]
+      },
+      {
+        "num": "IV", "title": "Lifestyle",
+        "items": [
+          { "t": "Shopping privé", "d": "Rue du Rhône, votre chauffeur porte les sacs et vous attend." },
+          { "t": "Accompagnement médical", "d": "Aéroport, clinique, hôtel. Discret et multilingue." },
+          { "t": "Family & Kids", "d": "Sièges enfants, trajets école et activités." },
+          { "t": "Excursions signature", "d": "Lavaux, Mont-Blanc, tour du Léman." }
+        ]
+      },
+      {
+        "num": "V", "title": "Conciergerie",
+        "items": [
+          { "t": "Un seul contact", "d": "Votre chauffeur réserve restaurants, clubs et billets." },
+          { "t": "Protection rapprochée", "d": "Par nos partenaires agréés, selon disponibilité." }
+        ]
+      }
+    ]
+  },
+  "allin": {
+    "badge": "PRIORITÉ ABSOLUE",
+    "title": "Mission",
+    "titleEm": "All-in-Now.",
+    "lede": "Une demande qui ne peut pas attendre ? Toutes nos alarmes se déclenchent. Toute l'équipe se mobilise pour trouver une solution immédiate, à n'importe quelle heure.",
+    "directLabel": "LIGNE DIRECTE",
+    "phone": "078 897 83 53",
+    "directNote": "Notre service le plus exclusif. Tarification sur demande.",
+    "cta": "Déclencher une mission"
+  },
+  "fleet": {
+    "eyebrow": "La flotte",
+    "title": "Mercedes-Benz,",
+    "titleEm": "dernières générations.",
+    "vehicles": {
+      "e21": { "tag": "Business · Transferts", "price": "dès 110 CHF" },
+      "e24": { "tag": "Business · Roadshow", "price": "dès 110 CHF" },
+      "van": { "tag": "Familles · Groupes · Ski", "price": "dès 130 CHF" },
+      "s25": { "tag": "Signature · VIP", "price": "dès 160 CHF" }
+    }
+  },
+  "drivers": {
+    "eyebrow": "Nos chauffeurs",
+    "title": "Choisissez",
+    "titleEm": "qui vous conduit.",
+    "note": "Chaque chauffeur a son profil : langues parlées, années d'expérience, spécialités. Choix du chauffeur dès la formule demi-journée.",
+    "certified": "Chauffeur certifié",
+    "langsLabel": "Langues",
+    "expLabel": "Expérience",
+    "specLabel": "Spécialités",
+    "cta": "Réserver avec ce chauffeur",
+    "photo": "[PHOTO]",
+    "list": [
+      { "id": "d1", "name": "[PRÉNOM N.]", "langs": "Français · English", "exp": "10+ ans", "spec": "Aéroport, jet privé, VIP" },
+      { "id": "d2", "name": "[PRÉNOM N.]", "langs": "Français · English", "exp": "10+ ans", "spec": "Délégations, roadshows" },
+      { "id": "d3", "name": "[PRÉNOM N.]", "langs": "Français · English", "exp": "10+ ans", "spec": "Stations de ski, familles" }
+    ],
+    "protectionTitle": "Protection rapprochée",
+    "protectionDesc": "Assurée par nos partenaires agréés, selon disponibilité. En option sur toutes les missions.",
+    "protectionCta": "Ajouter à ma mission →"
+  },
+  "teaser": {
+    "eyebrow": "Le configurateur",
+    "title": "Composez",
+    "titleEm": "votre mission.",
+    "lede": "Formule, véhicule, chauffeur, options. Quelques choix, une seule demande, et notre équipe s'occupe du reste.",
+    "steps": ["Formule", "Véhicule", "Chauffeur", "Options", "Date & trajet", "Récapitulatif"],
+    "cta": "Ouvrir le configurateur"
+  },
+  "testimonials": {
+    "eyebrow": "Avis clients",
+    "title": "Ils nous",
+    "titleEm": "font confiance.",
+    "lede": "Depuis 2022, les plus grandes entreprises et organisations comptent sur WVion pour leurs transferts, événements et transports executives.",
+    "list": [
+      { "id": "t1", "text": "WVion gère nos transferts executives en Suisse. Fiabilité, discrétion et professionnalisme, à chaque mission.", "author": "Banque internationale", "role": "Genève" },
+      { "id": "t2", "text": "Pour nos événements corporate et roadshows, WVion coordonne plusieurs véhicules sans faille. Un vrai partenaire.", "author": "Groupe Fortune 500", "role": "Suisse" },
+      { "id": "t3", "text": "Stations de ski, transferts aéroport, délégations — WVion excelle dans tous les scénarios. Recommandé sans hésiter.", "author": "Groupe hôtelier de luxe", "role": "Région Léman" }
+    ]
+  },
+  "footer": {
+    "societeLabel": "SOCIÉTÉ",
+    "societe": "WVion Services Sàrl\nAllée des Grenouilles 3\n1219 Châtelaine · Genève\nCHE-421.634.804",
+    "contactLabel": "CONTACT",
+    "contact": "078 897 83 53\nWVionservice@hotmail.com\nRéservations 24h/24",
+    "servicesLabel": "SERVICES",
+    "services": "Transferts aéroport & jet privé\nMise à disposition\nMission All-in-Now",
+    "languesLabel": "LANGUES",
+    "langues": "Français · English · العربية\nРусский · Deutsch",
+    "copyright": "© 2026 WVion Services Sàrl",
+    "legal": "Mentions légales · Confidentialité · CGV"
+  },
+  "config": {
+    "label": "CONFIGURATEUR",
+    "close": "Fermer le configurateur",
+    "stepWord": "Étape",
+    "continue": "Continuer →",
+    "back": "← Retour",
+    "closeBtn": "Fermer",
+    "summary": { "formule": "Formule", "vehicule": "Véhicule", "chauffeur": "Chauffeur", "options": "Options" },
+    "none": "Aucune",
+    "steps": {
+      "formule": "Formule", "vehicule": "Véhicule", "chauffeur": "Chauffeur",
+      "options": "Options", "quand": "Date & trajet", "recap": "Récapitulatif", "allin": "Urgence"
+    },
+    "formule": {
+      "title": "Quelle", "titleEm": "mission ?",
+      "cards": [
+        { "id": "transfert", "label": "Transfert", "desc": "Aéroport, gare, hôtel. Du point A au point B. Chauffeur attribué par WVion." },
+        { "id": "demi", "label": "Demi-journée", "desc": "Une demi-journée à disposition. Vous choisissez votre chauffeur." },
+        { "id": "jour", "label": "Journée", "desc": "Une journée entière à disposition. Vous choisissez votre chauffeur." },
+        { "id": "mensuel", "label": "Mensuel", "desc": "Abonnement privé ou corporate. Votre chauffeur attitré." },
+        { "id": "h24", "label": "Accompagné 24h/24", "desc": "Un chauffeur dédié, jour et nuit, pendant tout votre séjour." },
+        { "id": "allin", "label": "All-in-Now", "desc": "Urgence absolue. Toute l'équipe se mobilise immédiatement." }
+      ],
+      "priority": "PRIORITÉ"
+    },
+    "vehicule": { "title": "Votre", "titleEm": "véhicule." },
+    "chauffeur": {
+      "title": "Qui vous", "titleEm": "conduit ?",
+      "includedIn": "Inclus dans votre formule {form}.",
+      "choose": "Choisir ce chauffeur",
+      "selected": "✓ Sélectionné",
+      "autoTitle": "Laissez WVion choisir",
+      "autoDesc": "Nous attribuons le chauffeur le plus adapté à votre mission.",
+      "autoChoose": "Choisir cette option"
+    },
+    "options": {
+      "title": "Les", "titleEm": "détails.",
+      "list": [
+        { "id": "garde", "label": "Garde du corps", "note": "Partenaire agréé · selon disponibilité" },
+        { "id": "tarmac", "label": "Accueil tarmac · jet privé", "note": "Terminal aviation d'affaires" },
+        { "id": "valises", "label": "Récupération des valises", "note": "Check-in à domicile" },
+        { "id": "enfants", "label": "Sièges enfants", "note": "Homologués, toutes tailles" },
+        { "id": "concierge", "label": "Conciergerie", "note": "Restaurants, clubs, billets" },
+        { "id": "multi", "label": "Chauffeur multilingue", "note": "FR · EN · AR · RU · DE" }
+      ]
+    },
+    "quand": {
+      "title": "Quand,", "titleEm": "et où ?",
+      "date": "Date",
+      "time": "Heure de prise en charge",
+      "from": "Départ",
+      "fromPh": "Aéroport de Genève, hôtel…",
+      "to": "Destination",
+      "toPh": "Adresse, station, ville…",
+      "pax": "Passagers",
+      "flight": "Numéro de vol (facultatif)",
+      "flightPh": "LX 1234",
+      "contactEyebrow": "Vos coordonnées",
+      "name": "Nom complet",
+      "namePh": "Prénom et nom",
+      "phone": "Téléphone",
+      "phonePh": "+41 …",
+      "email": "E-mail (facultatif)",
+      "emailPh": "vous@exemple.ch",
+      "requiredNote": "Nom et téléphone requis pour vous confirmer la mission."
+    },
+    "recap": {
+      "eyebrow": "Récapitulatif",
+      "title": "Votre", "titleEm": "mission.",
+      "estimate": "Estimation",
+      "send": "Envoyer ma demande",
+      "sendNote": "Confirmation par un membre de l'équipe WVion. Aucun paiement à cette étape.",
+      "sending": "Envoi…",
+      "errorTitle": "Envoi impossible",
+      "errorNote": "Une erreur est survenue. Réessayez ou appelez-nous directement.",
+      "retry": "Réessayer",
+      "doneTitle": "Demande",
+      "doneTitleEm": "reçue.",
+      "doneNote": "Un membre de l'équipe WVion vous contacte [DÉLAI] pour confirmer votre mission.",
+      "backToSite": "Retour au site",
+      "rows": {
+        "formule": "Formule", "vehicule": "Véhicule", "chauffeur": "Chauffeur",
+        "options": "Options", "date": "Date", "trajet": "Trajet", "pax": "Passagers", "vol": "Vol",
+        "nom": "Nom", "telephone": "Téléphone", "email": "E-mail"
+      },
+      "attributed": "Attribué par WVion",
+      "autoChoice": "Choix WVion",
+      "toPrecise": "À préciser",
+      "price": "[PRIX] CHF",
+      "onQuote": "Sur devis"
+    },
+    "allinStep": {
+      "badge": "ALERTE ACTIVÉE",
+      "title": "Mission", "titleEm": "All-in-Now.",
+      "lede": "Appelez la ligne directe, ou laissez vos coordonnées : un responsable vous rappelle immédiatement.",
+      "phone": "078 897 83 53",
+      "name": "Nom",
+      "phoneLabel": "Téléphone",
+      "situation": "Votre situation",
+      "trigger": "Déclencher la mission",
+      "sending": "Transmission…",
+      "doneTitle": "Alerte", "doneTitleEm": "transmise.",
+      "doneNote": "Toute l'équipe est mobilisée. Un responsable vous rappelle immédiatement.",
+      "errorNote": "Transmission impossible. Appelez immédiatement la ligne directe.",
+      "backToSite": "Retour au site"
+    }
+  }
+}

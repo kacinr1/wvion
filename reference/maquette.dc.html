@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>WVion Services — Accueil</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#070707}
+a{color:#C9A96E;text-decoration:none}a:hover{color:#F2EDE4}
+.wv-root{font-family:'Jost',sans-serif;color:#F2EDE4;background:#070707;overflow:hidden}
+.wv-serif{font-family:'Bodoni Moda',serif}
+.wv-shimmer{background:linear-gradient(100deg,#8C7442 0%,#C9A96E 25%,#FFF3D6 45%,#C9A96E 60%,#8C7442 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:wvShimmer 6s linear infinite}
+@keyframes wvShimmer{0%{background-position:150% 0}100%{background-position:-100% 0}}
+.wv-spin{animation:wvSpin 28s linear infinite;transform-origin:50% 50%}
+@keyframes wvSpin{to{transform:rotate(360deg)}}
+.wv-marquee{display:flex;gap:64px;width:max-content;animation:wvMarq 40s linear infinite}
+@keyframes wvMarq{to{transform:translateX(-50%)}}
+.wv-sweep{position:absolute;top:0;bottom:0;width:30%;background:linear-gradient(90deg,transparent,rgba(255,243,214,.10),transparent);animation:wvSweep 7s ease-in-out infinite;pointer-events:none}
+@keyframes wvSweep{0%{left:-35%}60%,100%{left:110%}}
+.wv-pulse{animation:wvPulse 1.4s ease-in-out infinite}
+@keyframes wvPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(214,58,58,.6)}50%{opacity:.6;box-shadow:0 0 0 10px rgba(214,58,58,0)}}
+.wv-rise{animation:wvRise 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes wvRise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.wv-card{transition:transform .5s cubic-bezier(.2,.8,.2,1),border-color .5s}
+.wv-card:hover{transform:translateY(-8px);border-color:#C9A96E}
+.wv-tv-on{animation:wvTvOn .95s cubic-bezier(.7,0,.2,1) both}
+@keyframes wvTvOn{0%{transform:scale(0,.004);background:#FFF3D6;box-shadow:0 0 90px 24px rgba(201,169,110,.95)}30%{transform:scale(1,.004);background:#E6D3A3;box-shadow:0 0 90px 24px rgba(201,169,110,.85)}65%{transform:scale(1,1);background:#1A160F;box-shadow:0 0 0 0 rgba(201,169,110,0)}100%{transform:scale(1,1);background:#070707}}
+.wv-tv-on .wv-tv-content{animation:wvFadeIn .55s .62s both}
+.wv-tv-off{animation:wvTvOff .6s cubic-bezier(.7,0,.2,1) forwards}
+@keyframes wvTvOff{0%{transform:scale(1,1);filter:brightness(1)}45%{transform:scale(1,.004);filter:brightness(3);background:#E6D3A3}100%{transform:scale(0,.004);filter:brightness(4);background:#FFF3D6}}
+.wv-tv-off .wv-tv-content{opacity:0;transition:opacity .12s}
+.wv-scan{position:absolute;inset:0;pointer-events:none;z-index:3;background:repeating-linear-gradient(0deg,rgba(255,243,214,.06) 0 1px,transparent 1px 3px);animation:wvScan 1.6s ease-out forwards}
+@keyframes wvScan{0%,45%{opacity:1}100%{opacity:0}}
+.wv-step{animation:wvFadeIn .6s cubic-bezier(.2,.8,.2,1) both}
+@keyframes wvFadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.wv-still .wv-shimmer,.wv-still .wv-spin,.wv-still .wv-marquee,.wv-still .wv-sweep,.wv-still .wv-pulse,.wv-still .wv-rise,.wv-still .wv-tv-on,.wv-still .wv-tv-on .wv-tv-content,.wv-still .wv-step{animation:none}
+.wv-still .wv-scan{display:none}
+button{font-family:inherit;cursor:pointer}
+button:disabled{cursor:not-allowed;opacity:.35}
+input,textarea{font-family:inherit}
+</style>
+</helmet>
+<div class="wv-root {{rootClass}}" style="width: 100%; min-height: 100vh">
+
+<!-- NAV -->
+<header style="position: sticky; top: 0; z-index: 10; background: rgba(7,7,7,.86); backdrop-filter: blur(14px); border-bottom: 1px solid #1E1B16">
+<nav style="max-width: 1320px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px">
+<a href="#top" style="display: flex; align-items: baseline; gap: 12px; color: #F2EDE4">
+<span class="wv-serif" style="font-size: 28px; letter-spacing: 0.22em; font-weight: 500">WVION</span>
+<span style="font-size: 10px; letter-spacing: 0.4em; color: #A39E94">SERVICES · GENÈVE</span>
+</a>
+<div style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase">
+<a href="#services" style="color: #D8D2C6">Services</a>
+<a href="#flotte" style="color: #D8D2C6">Flotte</a>
+<a href="#chauffeurs" style="color: #D8D2C6">Chauffeurs</a>
+<a href="#allin" style="color: #D8D2C6">All-in-Now</a>
+<a href="#reserver" style="color: #D8D2C6">Configurer</a>
+</div>
+<div style="display: flex; align-items: center; gap: 16px">
+<div style="display: flex; gap: 4px" aria-label="Langue">
+<sc-for list="{{langs}}" as="lg" hint-placeholder-count="5">
+<button onClick="{{lg.pick}}" style="background: none; border: none; padding: 10px 6px; min-height: 44px; font-size: 12px; letter-spacing: 0.12em; color: {{lg.color}}">{{lg.l}}</button>
+</sc-for>
+</div>
+<button onClick="{{openMain}}" style="min-height: 46px; padding: 12px 26px; border: 1px solid {{accent}}; background: transparent; color: {{accent}}; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase">Réserver</button>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section id="top" style="position: relative; min-height: 100vh; overflow: hidden; display: flex; align-items: center">
+<video src="/_blob/1ba333224cf94d4b1e722f7c58c110b6" poster="/_blob/4d85c762d4a8a176774f6f86699ec583" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" ref="{{heroRef}}" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,7,7,.95) 0%, rgba(7,7,7,.72) 45%, rgba(7,7,7,.2) 100%)"></div>
+<div style="position: absolute; left: 0; right: 0; bottom: 0; height: 220px; background: linear-gradient(0deg, #070707, rgba(7,7,7,0))"></div>
+<div style="position: relative; width: 100%; max-width: 1320px; margin: 0 auto; padding: 120px 32px 96px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div class="wv-rise" style="flex: 999 1 560px; min-width: 0">
+<p style="margin: 0 0 28px; font-size: 12px; letter-spacing: 0.5em; color: #A39E94; text-transform: uppercase">Transport privé · Protection · Conciergerie</p>
+<h1 class="wv-serif" style="margin: 0; font-size: clamp(56px, 9vw, 132px); line-height: 0.95; font-weight: 400; letter-spacing: -0.02em">L’art<br><em class="wv-shimmer" style="font-style: italic">d’arriver.</em></h1>
+<p style="margin: 36px 0 0; max-width: 520px; font-size: 18px; line-height: 1.7; font-weight: 300; color: #CFC9BD">Chauffeurs privés en Mercedes-Benz Classe S, Classe E et Van. Disponibles 24h/24 à Genève, en Suisse et vers les plus belles destinations d’Europe.</p>
+<div style="margin-top: 44px; display: flex; flex-wrap: wrap; gap: 16px">
+<button onClick="{{openMain}}" style="min-height: 60px; padding: 18px 40px; border: none; background: {{accent}}; color: #070707; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 600">Composer ma mission</button>
+<button onClick="{{openAllin}}" style="min-height: 60px; padding: 18px 32px; border: 1px solid #3A342A; background: rgba(7,7,7,.4); color: #F2EDE4; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; display: flex; align-items: center; gap: 12px"><span class="wv-pulse" style="width: 8px; height: 8px; border-radius: 50%; background: #D63A3A"></span>Urgence All-in-Now</button>
+</div>
+</div>
+<div style="flex: 1 1 380px; min-width: 0; position: relative; display: flex; justify-content: center">
+<div style="position: relative; width: 100%; max-width: 440px; aspect-ratio: 1">
+<svg class="wv-spin" viewBox="0 0 400 400" style="position: absolute; inset: 0; width: 100%; height: 100%" aria-hidden="true">
+<defs><path id="wvCircle" d="M200,200 m-170,0 a170,170 0 1,1 340,0 a170,170 0 1,1 -340,0"></path></defs>
+<circle cx="200" cy="200" r="190" fill="none" stroke="#2A251D" stroke-width="1"></circle>
+<circle cx="200" cy="200" r="150" fill="none" stroke="#2A251D" stroke-width="1"></circle>
+<text fill="#C9A96E" font-size="13" letter-spacing="9" font-family="Jost"><textPath href="#wvCircle">WVION SERVICES · GENÈVE · 24H/24 · PRIVATE CHAUFFEUR · </textPath></text>
+</svg>
+<div style="position: absolute; inset: 22%; border-radius: 50%; background: #0F0D0A; border: 1px solid #C9A96E; overflow: hidden">
+<img src="/_blob/bda344dbc643fbef27ee253e6d39ac39" alt="Chauffeur en gants blancs ouvrant la portière" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div class="wv-sweep"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- STRIP -->
+<section style="border-top: 1px solid #1E1B16; border-bottom: 1px solid #1E1B16">
+<div style="max-width: 1320px; margin: 0 auto; padding: 36px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px">
+<div><div class="wv-serif" style="font-size: 40px; color: {{accent}}">24/24</div><div style="font-size: 12px; letter-spacing: 0.2em; color: #A39E94; text-transform: uppercase; margin-top: 6px">Disponibilité totale</div></div>
+<div><div class="wv-serif" style="font-size: 40px; color: {{accent}}">5</div><div style="font-size: 12px; letter-spacing: 0.2em; color: #A39E94; text-transform: uppercase; margin-top: 6px">Langues · FR EN AR RU DE</div></div>
+<div><div class="wv-serif" style="font-size: 40px; color: {{accent}}">2021–25</div><div style="font-size: 12px; letter-spacing: 0.2em; color: #A39E94; text-transform: uppercase; margin-top: 6px">Flotte Mercedes-Benz récente</div></div>
+<div><div class="wv-serif" style="font-size: 40px; color: {{accent}}">100%</div><div style="font-size: 12px; letter-spacing: 0.2em; color: #A39E94; text-transform: uppercase; margin-top: 6px">Chauffeurs certifiés VTC</div></div>
+</div>
+</section>
+
+<!-- MARQUEE -->
+<div style="padding: 28px 0; overflow: hidden; border-bottom: 1px solid #1E1B16" aria-hidden="true">
+<div class="wv-marquee wv-serif" style="font-size: 44px; font-style: italic; color: #3A342A; white-space: nowrap">
+<span>Genève</span><span style="color: {{accent}}">✦</span><span>Courchevel</span><span style="color: {{accent}}">✦</span><span>Verbier</span><span style="color: {{accent}}">✦</span><span>Gstaad</span><span style="color: {{accent}}">✦</span><span>Zermatt</span><span style="color: {{accent}}">✦</span><span>Megève</span><span style="color: {{accent}}">✦</span><span>Monaco</span><span style="color: {{accent}}">✦</span>
+<span>Genève</span><span style="color: {{accent}}">✦</span><span>Courchevel</span><span style="color: {{accent}}">✦</span><span>Verbier</span><span style="color: {{accent}}">✦</span><span>Gstaad</span><span style="color: {{accent}}">✦</span><span>Zermatt</span><span style="color: {{accent}}">✦</span><span>Megève</span><span style="color: {{accent}}">✦</span><span>Monaco</span><span style="color: {{accent}}">✦</span>
+</div>
+</div>
+
+<!-- FORMULES -->
+<section style="max-width: 1320px; margin: 0 auto; padding: 120px 32px 40px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 56px">
+<h2 class="wv-serif" style="margin: 0; font-size: clamp(40px, 5vw, 72px); font-weight: 400; line-height: 1">Votre temps,<br><em style="color: {{accent}}">votre formule.</em></h2>
+<p style="margin: 0; max-width: 380px; color: #A39E94; line-height: 1.7; font-weight: 300">Pour chaque formule à partir de la demi-journée, vous choisissez votre chauffeur sur son profil.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: #1E1B16; border: 1px solid #1E1B16">
+<div class="wv-card" style="background: #0B0A08; padding: 40px 32px; border: 1px solid transparent">
+<div style="font-size: 11px; letter-spacing: 0.3em; color: #8E897F">01</div>
+<h3 class="wv-serif" style="margin: 24px 0 12px; font-size: 30px; font-weight: 400">Transfert</h3>
+<p style="margin: 0; color: #A39E94; line-height: 1.7; font-weight: 300; font-size: 15px">Aéroport, gare, hôtel, rendez-vous. Point A vers point B, sans compromis.</p>
+<div style="margin-top: 32px; font-size: 14px; color: {{accent}}">dès [PRIX] CHF</div>
+</div>
+<div class="wv-card" style="background: #0B0A08; padding: 40px 32px; border: 1px solid transparent">
+<div style="font-size: 11px; letter-spacing: 0.3em; color: #8E897F">02</div>
+<h3 class="wv-serif" style="margin: 24px 0 12px; font-size: 30px; font-weight: 400">Demi-journée</h3>
+<p style="margin: 0; color: #A39E94; line-height: 1.7; font-weight: 300; font-size: 15px">Rendez-vous d’affaires, shopping privé, clinique. Chauffeur à disposition.</p>
+<div style="margin-top: 32px; font-size: 14px; color: {{accent}}">dès [PRIX] CHF</div>
+</div>
+<div class="wv-card" style="background: #0B0A08; padding: 40px 32px; border: 1px solid transparent">
+<div style="font-size: 11px; letter-spacing: 0.3em; color: #8E897F">03</div>
+<h3 class="wv-serif" style="margin: 24px 0 12px; font-size: 30px; font-weight: 400">Mensuel</h3>
+<p style="margin: 0; color: #A39E94; line-height: 1.7; font-weight: 300; font-size: 15px">Abonnement privé ou corporate en crédits d’heures. Votre chauffeur attitré.</p>
+<div style="margin-top: 32px; font-size: 14px; color: {{accent}}">sur devis</div>
+</div>
+<div class="wv-card" style="background: #14110C; padding: 40px 32px; border: 1px solid #3A342A">
+<div style="font-size: 11px; letter-spacing: 0.3em; color: {{accent}}">04 · SIGNATURE</div>
+<h3 class="wv-serif" style="margin: 24px 0 12px; font-size: 30px; font-weight: 400">Accompagné 24h/24</h3>
+<p style="margin: 0; color: #CFC9BD; line-height: 1.7; font-weight: 300; font-size: 15px">Un chauffeur dédié, jour et nuit, pendant toute la durée de votre séjour.</p>
+<div style="margin-top: 32px; font-size: 14px; color: {{accent}}">sur devis</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="max-width: 1320px; margin: 0 auto; padding: 100px 32px">
+<p style="margin: 0 0 16px; font-size: 12px; letter-spacing: 0.5em; color: #A39E94; text-transform: uppercase">Nos services</p>
+<h2 class="wv-serif" style="margin: 0 0 64px; font-size: clamp(40px, 5vw, 72px); font-weight: 400; line-height: 1">Tout ce qu’un trajet<br><em class="wv-shimmer">peut devenir.</em></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 64px">
+<figure class="wv-card" style="margin: 0; position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid #2A251D">
+<img src="/_blob/2586758d1b230098c9b635146e1e8191" alt="Classe S au pied d’un jet privé sur le tarmac" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 28px; background: linear-gradient(0deg, rgba(7,7,7,.92), rgba(7,7,7,0))"><span style="display: block; font-size: 11px; letter-spacing: 0.3em; color: #C9A96E">I · AÉROPORT</span><span class="wv-serif" style="display: block; margin-top: 8px; font-size: 26px; font-style: italic">Au pied de l’avion.</span></figcaption>
+</figure>
+<figure class="wv-card" style="margin: 0; position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid #2A251D">
+<img src="/_blob/4f6d9daba2357826fec27259faba4c40" alt="Chauffeur portant des sacs de shopping à Genève" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 28px; background: linear-gradient(0deg, rgba(7,7,7,.92), rgba(7,7,7,0))"><span style="display: block; font-size: 11px; letter-spacing: 0.3em; color: #C9A96E">IV · LIFESTYLE</span><span class="wv-serif" style="display: block; margin-top: 8px; font-size: 26px; font-style: italic">Les mains libres.</span></figcaption>
+</figure>
+<figure class="wv-card" style="margin: 0; position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid #2A251D">
+<img src="/_blob/c9fd6db7515fc6ef7123fb81e1cfd441" alt="Chauffeur ouvrant la portière d’une Classe S devant un palace" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 28px; background: linear-gradient(0deg, rgba(7,7,7,.92), rgba(7,7,7,0))"><span style="display: block; font-size: 11px; letter-spacing: 0.3em; color: #C9A96E">V · CONCIERGERIE</span><span class="wv-serif" style="display: block; margin-top: 8px; font-size: 26px; font-style: italic">Le geste juste.</span></figcaption>
+</figure>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px">
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="5">
+<div class="wv-card" style="border: 1px solid #2A251D; padding: 36px 32px; background: #0B0A08">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<h3 class="wv-serif" style="margin: 0; font-size: 26px; font-weight: 400; font-style: italic">{{g.title}}</h3>
+<span style="font-size: 11px; letter-spacing: 0.3em; color: #8E897F">{{g.num}}</span>
+</div>
+<div style="height: 1px; background: #2A251D; margin: 24px 0"></div>
+<sc-for list="{{g.items}}" as="it" hint-placeholder-count="3">
+<div style="padding: 12px 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 15px; color: #F2EDE4; font-weight: 500">{{it.t}}</span>
+<span style="font-size: 14px; color: #A39E94; line-height: 1.6; font-weight: 300">{{it.d}}</span>
+</div>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- ALL-IN-NOW -->
+<section id="allin" style="position: relative; background: #0E0505; border-top: 1px solid #3A1818; border-bottom: 1px solid #3A1818; overflow: hidden">
+<video src="/_blob/5ed35fdab051acd551ced1c76a39723e" poster="/_blob/d7857655c0944f1818137b1eeea4abd5" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" ref="{{allinRef}}" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
+<div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,5,5,.96) 0%, rgba(14,5,5,.8) 50%, rgba(14,5,5,.45) 100%)"></div>
+<div class="wv-sweep" style="background: linear-gradient(90deg, transparent, rgba(214,58,58,.10), transparent)"></div>
+<div style="position: relative; max-width: 1320px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 999 1 560px; min-width: 0">
+<div style="display: inline-flex; align-items: center; gap: 12px; padding: 10px 18px; border: 1px solid #5A2222; font-size: 11px; letter-spacing: 0.32em; color: #E07A7A"><span class="wv-pulse" style="width: 8px; height: 8px; border-radius: 50%; background: #D63A3A"></span>PRIORITÉ ABSOLUE</div>
+<h2 class="wv-serif" style="margin: 32px 0 0; font-size: clamp(52px, 8vw, 116px); font-weight: 400; line-height: 0.92">Mission<br><em style="color: {{accent}}">All-in-Now.</em></h2>
+<p style="margin: 32px 0 0; max-width: 560px; font-size: 19px; line-height: 1.7; font-weight: 300; color: #D8D2C6">Une demande qui ne peut pas attendre ? Toutes nos alarmes se déclenchent. Toute l’équipe se mobilise pour trouver une solution immédiate, à n’importe quelle heure.</p>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; border: 1px solid #5A2222; padding: 36px; background: rgba(20,8,8,.85)">
+<div style="font-size: 11px; letter-spacing: 0.3em; color: #E07A7A">LIGNE DIRECTE</div>
+<div class="wv-serif" style="margin-top: 16px; font-size: 34px">[VOTRE NUMÉRO]</div>
+<p style="margin: 16px 0 28px; color: #A39E94; line-height: 1.6; font-weight: 300; font-size: 15px">Notre service le plus exclusif. Tarification sur demande.</p>
+<button onClick="{{openAllin}}" style="width: 100%; min-height: 56px; border: none; background: #D63A3A; color: #FFFFFF; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 600">Déclencher une mission</button>
+</div>
+</div>
+</section>
+
+<!-- FLOTTE -->
+<section id="flotte" style="max-width: 1320px; margin: 0 auto; padding: 120px 32px 80px">
+<p style="margin: 0 0 16px; font-size: 12px; letter-spacing: 0.5em; color: #A39E94; text-transform: uppercase">La flotte</p>
+<h2 class="wv-serif" style="margin: 0 0 64px; font-size: clamp(40px, 5vw, 72px); font-weight: 400; line-height: 1">Mercedes-Benz,<br><em style="color: {{accent}}">dernières générations.</em></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
+<sc-for list="{{fleet}}" as="v" hint-placeholder-count="4">
+<div class="wv-card" style="border: 1px solid #2A251D; background: #0B0A08">
+<div style="position: relative; aspect-ratio: 4 / 3; background: #100E0B; overflow: hidden; border-bottom: 1px solid #2A251D">
+<img src="{{v.img}}" alt="{{v.name}} {{v.year}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div class="wv-sweep"></div>
+</div>
+<div style="padding: 28px">
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<h3 class="wv-serif" style="margin: 0; font-size: 28px; font-weight: 400">{{v.name}}</h3>
+<span style="font-size: 14px; color: {{accent}}">{{v.year}}</span>
+</div>
+<p style="margin: 10px 0 0; font-size: 12px; letter-spacing: 0.2em; color: #A39E94; text-transform: uppercase">{{v.tag}}</p>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- CHAUFFEURS -->
+<section id="chauffeurs" style="max-width: 1320px; margin: 0 auto; padding: 80px 32px 120px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 56px">
+<div>
+<p style="margin: 0 0 16px; font-size: 12px; letter-spacing: 0.5em; color: #A39E94; text-transform: uppercase">Nos chauffeurs</p>
+<h2 class="wv-serif" style="margin: 0; font-size: clamp(40px, 5vw, 72px); font-weight: 400; line-height: 1">Choisissez<br><em style="color: {{accent}}">qui vous conduit.</em></h2>
+</div>
+<p style="margin: 0; max-width: 380px; color: #A39E94; line-height: 1.7; font-weight: 300">Chaque chauffeur a son profil : langues parlées, années d’expérience, spécialités. Choix du chauffeur dès la formule demi-journée.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
+<sc-for list="{{drivers}}" as="d" hint-placeholder-count="3">
+<div class="wv-card" style="border: 1px solid {{d.border}}; background: #0B0A08; padding: 32px">
+<div style="display: flex; gap: 20px; align-items: center">
+<div style="width: 84px; height: 84px; border-radius: 50%; background: #16130E; border: 1px solid #3A342A; display: flex; align-items: center; justify-content: center; font-size: 10px; letter-spacing: 0.2em; color: #8E897F">[PHOTO]</div>
+<div>
+<h3 class="wv-serif" style="margin: 0; font-size: 24px; font-weight: 400">{{d.name}}</h3>
+<div style="margin-top: 8px; display: inline-flex; align-items: center; gap: 6px; font-size: 11px; letter-spacing: 0.18em; color: {{accent}}; text-transform: uppercase">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2l3 3h4v4l3 3-3 3v4h-4l-3 3-3-3H5v-4l-3-3 3-3V5h4z"></path><path d="M8.5 12l2.5 2.5L16 9.5"></path></svg>Chauffeur certifié</div>
+</div>
+</div>
+<div style="margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; border-top: 1px solid #2A251D; padding-top: 24px">
+<div><div style="font-size: 11px; letter-spacing: 0.2em; color: #8E897F; text-transform: uppercase">Langues</div><div style="margin-top: 6px; font-size: 15px">{{d.langs}}</div></div>
+<div><div style="font-size: 11px; letter-spacing: 0.2em; color: #8E897F; text-transform: uppercase">Expérience</div><div style="margin-top: 6px; font-size: 15px">{{d.exp}}</div></div>
+<div style="grid-column: span 2"><div style="font-size: 11px; letter-spacing: 0.2em; color: #8E897F; text-transform: uppercase">Spécialités</div><div style="margin-top: 6px; font-size: 15px; color: #CFC9BD">{{d.spec}}</div></div>
+</div>
+<button onClick="{{d.pickAndOpen}}" style="margin-top: 28px; width: 100%; min-height: 52px; border: 1px solid {{accent}}; background: transparent; color: {{accent}}; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600">Réserver avec ce chauffeur</button>
+</div>
+</sc-for>
+</div>
+<div style="margin-top: 40px; padding: 28px 32px; border: 1px solid #2A251D; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<div style="display: flex; gap: 16px; align-items: center">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.4" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"></path></svg>
+<div><div style="font-size: 15px; font-weight: 500">Protection rapprochée</div><div style="font-size: 14px; color: #A39E94; font-weight: 300; margin-top: 4px">Assurée par nos partenaires agréés, selon disponibilité. En option sur toutes les missions.</div></div>
+</div>
+<button onClick="{{openMain}}" style="min-height: 44px; background: none; border: none; color: {{accent}}; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase">Ajouter à ma mission →</button>
+</div>
+</section>
+
+<!-- TEASER CONFIGURATEUR -->
+<section id="reserver" style="position: relative; overflow: hidden; border-top: 1px solid #1E1B16; border-bottom: 1px solid #1E1B16">
+<img src="/_blob/c9fd6db7515fc6ef7123fb81e1cfd441" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; inset: 0; background: rgba(7,7,7,.82)"></div>
+<div style="position: relative; max-width: 1100px; margin: 0 auto; padding: 140px 32px; text-align: center">
+<p style="margin: 0 0 20px; font-size: 12px; letter-spacing: 0.5em; color: #A39E94; text-transform: uppercase">Le configurateur</p>
+<h2 class="wv-serif" style="margin: 0; font-size: clamp(48px, 7vw, 104px); font-weight: 400; line-height: 0.95">Composez<br><em class="wv-shimmer">votre mission.</em></h2>
+<p style="margin: 32px auto 0; max-width: 560px; font-size: 18px; line-height: 1.7; font-weight: 300; color: #CFC9BD">Formule, véhicule, chauffeur, options. Quelques choix, une seule demande, et notre équipe s’occupe du reste.</p>
+<div style="margin: 48px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 32px; font-size: 12px; letter-spacing: 0.24em; color: #8E897F; text-transform: uppercase">
+<span><span style="color: {{accent}}">01</span> Formule</span><span><span style="color: {{accent}}">02</span> Véhicule</span><span><span style="color: {{accent}}">03</span> Chauffeur</span><span><span style="color: {{accent}}">04</span> Options</span><span><span style="color: {{accent}}">05</span> Date &amp; trajet</span><span><span style="color: {{accent}}">06</span> Récapitulatif</span>
+</div>
+<button onClick="{{openMain}}" style="min-height: 64px; padding: 20px 56px; border: none; background: {{accent}}; color: #070707; font-size: 14px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 600">Ouvrir le configurateur</button>
+</div>
+</section>
+
+<!-- SUIVI LIVE -->
+<section style="max-width: 1320px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 999 1 480px; min-width: 0">
+<p style="margin: 0 0 16px; font-size: 12px; letter-spacing: 0.5em; color: #A39E94; text-transform: uppercase">Suivi en direct</p>
+<h2 class="wv-serif" style="margin: 0; font-size: clamp(40px, 5vw, 72px); font-weight: 400; line-height: 1">Voyez-le<br><em style="color: {{accent}}">arriver.</em></h2>
+<p style="margin: 28px 0 0; max-width: 460px; color: #A39E94; line-height: 1.7; font-weight: 300; font-size: 17px">Position du véhicule en temps réel, profil du chauffeur et heure d’arrivée, directement sur votre téléphone.</p>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center">
+<div style="width: 100%; max-width: 360px; border: 1px solid #3A342A; border-radius: 36px; padding: 14px; background: #0B0A08">
+<div style="border-radius: 26px; overflow: hidden; background: #100E0B">
+<div style="position: relative; height: 300px; background: #14120E; overflow: hidden">
+<svg viewBox="0 0 330 300" style="position: absolute; inset: 0; width: 100%; height: 100%" aria-hidden="true">
+<path d="M0 60 H330 M0 150 H330 M0 240 H330 M80 0 V300 M200 0 V300 M280 0 V300" stroke="#221E17" stroke-width="10"></path>
+<path d="M40 260 C 90 240, 120 180, 200 150 S 270 70, 290 40" fill="none" stroke="#C9A96E" stroke-width="3" stroke-dasharray="6 6"></path>
+<circle cx="290" cy="40" r="7" fill="#F2EDE4"></circle>
+<circle cx="200" cy="150" r="14" fill="#C9A96E" opacity=".25" class="wv-pulse"></circle>
+<circle cx="200" cy="150" r="7" fill="#C9A96E"></circle>
+</svg>
+</div>
+<div style="padding: 22px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<div><div style="font-size: 11px; letter-spacing: 0.2em; color: #8E897F">ARRIVÉE</div><div class="wv-serif" style="font-size: 30px; margin-top: 4px">[X] min</div></div>
+<div style="text-align: right"><div style="font-size: 14px">Classe S · 2025</div><div style="font-size: 12px; color: #A39E94; margin-top: 4px">[PRÉNOM N.] · certifié</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid #1E1B16">
+<div style="max-width: 1320px; margin: 0 auto; padding: 80px 32px 40px">
+<div class="wv-serif wv-shimmer" style="font-size: clamp(64px, 14vw, 200px); letter-spacing: 0.08em; line-height: 0.9">WVION</div>
+<div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; font-size: 14px; color: #A39E94; line-height: 1.8; font-weight: 300">
+<div><div style="font-size: 11px; letter-spacing: 0.3em; color: #8E897F; margin-bottom: 10px">SOCIÉTÉ</div>WVion Services Sàrl<br>Allée des Grenouilles 3<br>1219 Châtelaine · Genève<br>CHE-421.634.804</div>
+<div><div style="font-size: 11px; letter-spacing: 0.3em; color: #8E897F; margin-bottom: 10px">CONTACT</div>[VOTRE NUMÉRO]<br>[VOTRE E-MAIL]<br>Réservations 24h/24</div>
+<div><div style="font-size: 11px; letter-spacing: 0.3em; color: #8E897F; margin-bottom: 10px">SERVICES</div>Transferts aéroport &amp; jet privé<br>Mise à disposition<br>Mission All-in-Now</div>
+<div><div style="font-size: 11px; letter-spacing: 0.3em; color: #8E897F; margin-bottom: 10px">LANGUES</div>Français · English · العربية<br>Русский · Deutsch</div>
+</div>
+<div style="margin-top: 56px; padding-top: 24px; border-top: 1px solid #1E1B16; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12px; color: #8E897F">
+<span>© 2026 WVion Services Sàrl</span>
+<span>Mentions légales · Confidentialité · CGV</span>
+</div>
+</div>
+</footer>
+
+<!-- CONFIGURATEUR PLEIN ÉCRAN (effet télé) -->
+<sc-if value="{{cfgVisible}}" hint-placeholder-val="{{ false }}">
+<div role="dialog" aria-modal="true" aria-label="Configurateur de mission" style="position: fixed; inset: 0; z-index: 100; background: #000000; display: flex">
+<div class="{{tvClass}}" style="position: relative; width: 100%; height: 100%; background: #070707; overflow: hidden">
+<div class="wv-scan"></div>
+<div class="wv-tv-content" style="position: relative; height: 100%; display: flex; flex-direction: column">
+
+<!-- barre haute -->
+<div style="flex: none; border-bottom: 1px solid #1E1B16">
+<div style="padding: 18px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<div style="display: flex; align-items: baseline; gap: 12px"><span class="wv-serif" style="font-size: 22px; letter-spacing: 0.22em">WVION</span><span style="font-size: 10px; letter-spacing: 0.4em; color: {{accent}}">CONFIGURATEUR</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 22px">
+<sc-for list="{{stepList}}" as="st" hint-placeholder-count="6">
+<button onClick="{{st.pick}}" style="min-height: 44px; padding: 8px 0; background: none; border: none; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: {{st.color}}">{{st.num}} · {{st.label}}</button>
+</sc-for>
+</div>
+<button onClick="{{closeCfg}}" aria-label="Fermer le configurateur" style="width: 46px; height: 46px; border: 1px solid #3A342A; background: transparent; color: #F2EDE4; display: flex; align-items: center; justify-content: center">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg>
+</button>
+</div>
+<div style="height: 2px; background: #1E1B16"><div style="height: 2px; width: {{progress}}; background: {{progressColor}}; transition: width .6s cubic-bezier(.2,.8,.2,1)"></div></div>
+</div>
+
+<!-- contenu -->
+<div style="flex: 1 1 auto; overflow-y: auto">
+<div style="max-width: 1240px; margin: 0 auto; padding: 56px 32px 64px">
+
+<sc-if value="{{isFormule}}" hint-placeholder-val="{{ true }}">
+<div class="wv-step">
+<p style="margin: 0 0 14px; font-size: 12px; letter-spacing: 0.5em; color: #8E897F; text-transform: uppercase">Étape {{stepNum}}</p>
+<h2 class="wv-serif" style="margin: 0 0 48px; font-size: clamp(40px, 6vw, 84px); font-weight: 400; line-height: 1">Quelle <em style="color: {{accent}}">mission ?</em></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<sc-for list="{{formCards}}" as="f" hint-placeholder-count="6">
+<button onClick="{{f.pick}}" style="min-height: 180px; padding: 32px 28px; text-align: left; border: 1px solid {{f.border}}; background: {{f.bg}}; color: #F2EDE4; display: flex; flex-direction: column; justify-content: space-between; gap: 20px">
+<span style="font-size: 11px; letter-spacing: 0.3em; color: {{f.numColor}}">{{f.num}}</span>
+<span><span class="wv-serif" style="display: block; font-size: 32px">{{f.label}}</span><span style="display: block; margin-top: 10px; font-size: 14px; line-height: 1.6; color: #A39E94; font-weight: 300">{{f.desc}}</span></span>
+</button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isVehicule}}" hint-placeholder-val="{{ false }}">
+<div class="wv-step">
+<p style="margin: 0 0 14px; font-size: 12px; letter-spacing: 0.5em; color: #8E897F; text-transform: uppercase">Étape {{stepNum}}</p>
+<h2 class="wv-serif" style="margin: 0 0 40px; font-size: clamp(40px, 6vw, 84px); font-weight: 400; line-height: 1">Votre <em style="color: {{accent}}">véhicule.</em></h2>
+<div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch">
+<div style="flex: 999 1 560px; min-width: 0; position: relative; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid #2A251D">
+<img src="{{selVeh.img}}" alt="{{selVeh.name}} {{selVeh.year}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 32px; background: linear-gradient(0deg, rgba(7,7,7,.95), rgba(7,7,7,0))">
+<div style="font-size: 12px; letter-spacing: 0.3em; color: {{accent}}">{{selVeh.tag}}</div>
+<div class="wv-serif" style="margin-top: 10px; font-size: clamp(36px, 5vw, 64px); line-height: 1">{{selVeh.name}} <em style="color: {{accent}}">{{selVeh.year}}</em></div>
+</div>
+</div>
+<div style="flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{vehOpts}}" as="o" hint-placeholder-count="4">
+<button onClick="{{o.pick}}" style="min-height: 88px; padding: 10px; display: flex; align-items: center; gap: 16px; text-align: left; border: 1px solid {{o.border}}; background: {{o.bg}}; color: #F2EDE4">
+<img src="{{o.img}}" alt="" style="width: 104px; height: 68px; object-fit: cover; flex: none">
+<span><span class="wv-serif" style="display: block; font-size: 21px">{{o.name}}</span><span style="display: block; margin-top: 4px; font-size: 12px; color: #A39E94">{{o.year}} · {{o.tag}}</span></span>
+</button>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isChauffeur}}" hint-placeholder-val="{{ false }}">
+<div class="wv-step">
+<p style="margin: 0 0 14px; font-size: 12px; letter-spacing: 0.5em; color: #8E897F; text-transform: uppercase">Étape {{stepNum}}</p>
+<h2 class="wv-serif" style="margin: 0 0 16px; font-size: clamp(40px, 6vw, 84px); font-weight: 400; line-height: 1">Qui vous <em style="color: {{accent}}">conduit ?</em></h2>
+<p style="margin: 0 0 40px; color: #A39E94; font-weight: 300; font-size: 16px">Inclus dans votre formule {{sumForm}}.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px">
+<sc-for list="{{drivers}}" as="d" hint-placeholder-count="3">
+<button onClick="{{d.pick}}" style="padding: 28px; text-align: left; border: 1px solid {{d.border}}; background: {{d.cardBg}}; color: #F2EDE4">
+<span style="display: flex; gap: 18px; align-items: center">
+<span style="width: 72px; height: 72px; flex: none; border-radius: 50%; background: #16130E; border: 1px solid #3A342A; display: flex; align-items: center; justify-content: center; font-size: 10px; letter-spacing: 0.2em; color: #8E897F">[PHOTO]</span>
+<span><span class="wv-serif" style="display: block; font-size: 24px">{{d.name}}</span><span style="display: block; margin-top: 6px; font-size: 11px; letter-spacing: 0.18em; color: {{accent}}; text-transform: uppercase">Chauffeur certifié</span></span>
+</span>
+<span style="display: block; margin-top: 22px; padding-top: 18px; border-top: 1px solid #2A251D; font-size: 14px; line-height: 1.9; color: #CFC9BD">Langues : {{d.langs}}<br>Expérience : {{d.exp}}<br>{{d.spec}}</span>
+<span style="display: block; margin-top: 18px; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: {{d.stateColor}}">{{d.btnLabel}}</span>
+</button>
+</sc-for>
+<button onClick="{{pickAuto}}" style="padding: 28px; text-align: left; border: 1px dashed {{autoBorder}}; background: transparent; color: #F2EDE4; display: flex; flex-direction: column; justify-content: center; gap: 12px">
+<span class="wv-serif" style="font-size: 24px; font-style: italic">Laissez WVion choisir</span>
+<span style="font-size: 14px; color: #A39E94; line-height: 1.6; font-weight: 300">Nous attribuons le chauffeur le plus adapté à votre mission.</span>
+<span style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: {{autoStateColor}}">{{autoLabel}}</span>
+</button>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isOptions}}" hint-placeholder-val="{{ false }}">
+<div class="wv-step">
+<p style="margin: 0 0 14px; font-size: 12px; letter-spacing: 0.5em; color: #8E897F; text-transform: uppercase">Étape {{stepNum}}</p>
+<h2 class="wv-serif" style="margin: 0 0 48px; font-size: clamp(40px, 6vw, 84px); font-weight: 400; line-height: 1">Les <em style="color: {{accent}}">détails.</em></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px">
+<sc-for list="{{optList}}" as="op" hint-placeholder-count="6">
+<button onClick="{{op.toggle}}" aria-pressed="{{op.on}}" style="min-height: 92px; padding: 22px 24px; display: flex; align-items: center; gap: 18px; text-align: left; border: 1px solid {{op.border}}; background: {{op.bg}}; color: #F2EDE4">
+<span style="width: 22px; height: 22px; flex: none; border: 1px solid {{accent}}; background: {{op.box}}; display: flex; align-items: center; justify-content: center; color: #070707; font-size: 14px">{{op.tick}}</span>
+<span><span style="display: block; font-size: 17px">{{op.label}}</span><span style="display: block; font-size: 13px; color: #8E897F; margin-top: 4px">{{op.note}}</span></span>
+</button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isQuand}}" hint-placeholder-val="{{ false }}">
+<div class="wv-step">
+<p style="margin: 0 0 14px; font-size: 12px; letter-spacing: 0.5em; color: #8E897F; text-transform: uppercase">Étape {{stepNum}}</p>
+<h2 class="wv-serif" style="margin: 0 0 48px; font-size: clamp(40px, 6vw, 84px); font-weight: 400; line-height: 1">Quand, <em style="color: {{accent}}">et où ?</em></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px 24px; max-width: 900px">
+<label style="display: flex; flex-direction: column; gap: 10px; font-size: 11px; letter-spacing: 0.24em; color: #8E897F; text-transform: uppercase">Date<input type="date" value="{{f.date}}" onChange="{{setDate}}" style="min-height: 52px; padding: 0 16px; background: #0B0A08; border: 1px solid #3A342A; color: #F2EDE4; font-size: 16px; color-scheme: dark"></label>
+<label style="display: flex; flex-direction: column; gap: 10px; font-size: 11px; letter-spacing: 0.24em; color: #8E897F; text-transform: uppercase">Heure de prise en charge<input type="time" value="{{f.time}}" onChange="{{setTime}}" style="min-height: 52px; padding: 0 16px; background: #0B0A08; border: 1px solid #3A342A; color: #F2EDE4; font-size: 16px; color-scheme: dark"></label>
+<label style="display: flex; flex-direction: column; gap: 10px; font-size: 11px; letter-spacing: 0.24em; color: #8E897F; text-transform: uppercase">Départ<input type="text" placeholder="Aéroport de Genève, hôtel…" value="{{f.from}}" onChange="{{setFrom}}" style="min-height: 52px; padding: 0 16px; background: #0B0A08; border: 1px solid #3A342A; color: #F2EDE4; font-size: 16px"></label>
+<label style="display: flex; flex-direction: column; gap: 10px; font-size: 11px; letter-spacing: 0.24em; color: #8E897F; text-transform: uppercase">Destination<input type="text" placeholder="Adresse, station, ville…" value="{{f.to}}" onChange="{{setTo}}" style="min-height: 52px; padding: 0 16px; background: #0B0A08; border: 1px solid #3A342A; color: #F2EDE4; font-size: 16px"></label>
+<label style="display: flex; flex-direction: column; gap: 10px; font-size: 11px; letter-spacing: 0.24em; color: #8E897F; text-transform: uppercase">Passagers<input type="number" min="1" placeholder="1" value="{{f.pax}}" onChange="{{setPax}}" style="min-height: 52px; padding: 0 16px; background: #0B0A08; border: 1px solid #3A342A; color: #F2EDE4; font-size: 16px"></label>
+<label style="display: flex; flex-direction: column; gap: 10px; font-size: 11px; letter-spacing: 0.24em; color: #8E897F; text-transform: uppercase">Numéro de vol (facultatif)<input type="text" placeholder="LX 1234" value="{{f.flight}}" onChange="{{setFlight}}" style="min-height: 52px; padding: 0 16px; background: #0B0A08; border: 1px solid #3A342A; color: #F2EDE4; font-size: 16px"></label>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isRecap}}" hint-placeholder-val="{{ false }}">
+<div class="wv-step">
+<sc-if value="{{notSent}}" hint-placeholder-val="{{ true }}">
+<div style="position: relative; overflow: hidden; border: 1px solid #3A342A">
+<img src="{{selVeh.img}}" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,7,7,.97) 0%, rgba(7,7,7,.85) 55%, rgba(7,7,7,.45) 100%)"></div>
+<div style="position: relative; padding: 56px 48px; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 999 1 420px; min-width: 0">
+<p style="margin: 0 0 14px; font-size: 12px; letter-spacing: 0.5em; color: {{accent}}; text-transform: uppercase">Récapitulatif</p>
+<h2 class="wv-serif" style="margin: 0 0 40px; font-size: clamp(44px, 6vw, 88px); font-weight: 400; line-height: 0.95">Votre<br><em class="wv-shimmer">mission.</em></h2>
+<sc-for list="{{recapRows}}" as="r" hint-placeholder-count="7">
+<div style="display: flex; justify-content: space-between; gap: 24px; padding: 14px 0; border-bottom: 1px solid rgba(58,52,42,.7)">
+<span style="font-size: 12px; letter-spacing: 0.24em; color: #8E897F; text-transform: uppercase">{{r.k}}</span>
+<span style="font-size: 16px; text-align: right">{{r.v}}</span>
+</div>
+</sc-for>
+</div>
+<div style="flex: 1 1 280px; min-width: 0; align-self: flex-end">
+<div style="font-size: 12px; letter-spacing: 0.24em; color: #8E897F; text-transform: uppercase">Estimation</div>
+<div class="wv-serif" style="margin-top: 8px; font-size: 48px; color: {{accent}}">{{sumPrice}}</div>
+<button onClick="{{send}}" style="margin-top: 28px; width: 100%; min-height: 60px; border: none; background: {{accent}}; color: #070707; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 600">Envoyer ma demande</button>
+<p style="margin: 14px 0 0; font-size: 12px; color: #A39E94; line-height: 1.6">Confirmation par un membre de l’équipe WVion. Aucun paiement à cette étape.</p>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
+<div style="min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center">
+<svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1" aria-hidden="true"><circle cx="12" cy="12" r="10.5"></circle><path d="M7.5 12.2l3 3 6-6.4"></path></svg>
+<h2 class="wv-serif" style="margin: 32px 0 0; font-size: clamp(44px, 6vw, 84px); font-weight: 400; line-height: 1">Demande <em class="wv-shimmer">reçue.</em></h2>
+<p style="margin: 24px 0 40px; max-width: 520px; color: #CFC9BD; font-size: 17px; line-height: 1.7; font-weight: 300">Un membre de l’équipe WVion vous contacte [DÉLAI] pour confirmer votre mission.</p>
+<button onClick="{{closeCfg}}" style="min-height: 52px; padding: 14px 40px; border: 1px solid {{accent}}; background: transparent; color: {{accent}}; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase">Retour au site</button>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{isAllinStep}}" hint-placeholder-val="{{ false }}">
+<div class="wv-step">
+<sc-if value="{{notSent}}" hint-placeholder-val="{{ true }}">
+<div style="position: relative; overflow: hidden; border: 1px solid #5A2222">
+<img src="/_blob/2586758d1b230098c9b635146e1e8191" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; inset: 0; background: rgba(20,6,6,.9)"></div>
+<div style="position: relative; padding: 56px 48px; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 999 1 420px; min-width: 0">
+<div style="display: inline-flex; align-items: center; gap: 12px; padding: 10px 18px; border: 1px solid #5A2222; font-size: 11px; letter-spacing: 0.32em; color: #E07A7A"><span class="wv-pulse" style="width: 8px; height: 8px; border-radius: 50%; background: #D63A3A"></span>ALERTE ACTIVÉE</div>
+<h2 class="wv-serif" style="margin: 28px 0 0; font-size: clamp(48px, 7vw, 100px); font-weight: 400; line-height: 0.92">Mission<br><em style="color: {{accent}}">All-in-Now.</em></h2>
+<p style="margin: 28px 0 0; max-width: 480px; font-size: 18px; line-height: 1.7; font-weight: 300; color: #D8D2C6">Appelez la ligne directe, ou laissez vos coordonnées : un responsable vous rappelle immédiatement.</p>
+<div class="wv-serif" style="margin-top: 32px; font-size: 40px">[VOTRE NUMÉRO]</div>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<label style="display: flex; flex-direction: column; gap: 10px; font-size: 11px; letter-spacing: 0.24em; color: #E07A7A; text-transform: uppercase">Nom<input type="text" value="{{f.name}}" onChange="{{setName}}" style="min-height: 52px; padding: 0 16px; background: rgba(7,7,7,.7); border: 1px solid #5A2222; color: #F2EDE4; font-size: 16px"></label>
+<label style="display: flex; flex-direction: column; gap: 10px; font-size: 11px; letter-spacing: 0.24em; color: #E07A7A; text-transform: uppercase">Téléphone<input type="tel" value="{{f.phone}}" onChange="{{setPhone}}" style="min-height: 52px; padding: 0 16px; background: rgba(7,7,7,.7); border: 1px solid #5A2222; color: #F2EDE4; font-size: 16px"></label>
+<label style="display: flex; flex-direction: column; gap: 10px; font-size: 11px; letter-spacing: 0.24em; color: #E07A7A; text-transform: uppercase">Votre situation<textarea rows="3" value="{{f.note}}" onChange="{{setNote}}" style="padding: 14px 16px; background: rgba(7,7,7,.7); border: 1px solid #5A2222; color: #F2EDE4; font-size: 16px; resize: vertical"></textarea></label>
+<button onClick="{{send}}" style="min-height: 60px; border: none; background: #D63A3A; color: #FFFFFF; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 600">Déclencher la mission</button>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
+<div style="min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center">
+<span class="wv-pulse" style="width: 16px; height: 16px; border-radius: 50%; background: #D63A3A"></span>
+<h2 class="wv-serif" style="margin: 32px 0 0; font-size: clamp(44px, 6vw, 84px); font-weight: 400; line-height: 1">Alerte <em style="color: #E07A7A">transmise.</em></h2>
+<p style="margin: 24px 0 40px; max-width: 520px; color: #CFC9BD; font-size: 17px; line-height: 1.7; font-weight: 300">Toute l’équipe est mobilisée. Un responsable vous rappelle immédiatement.</p>
+<button onClick="{{closeCfg}}" style="min-height: 52px; padding: 14px 40px; border: 1px solid #D63A3A; background: transparent; color: #E07A7A; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase">Retour au site</button>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+</div>
+</div>
+
+<!-- barre basse -->
+<sc-if value="{{showFooter}}" hint-placeholder-val="{{ true }}">
+<div style="flex: none; border-top: 1px solid #1E1B16; background: #0A0908">
+<div style="padding: 16px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 6px 28px; font-size: 13px; color: #A39E94">
+<span>Formule <span style="color: #F2EDE4">{{sumFormShort}}</span></span>
+<span>Véhicule <span style="color: #F2EDE4">{{sumVeh}}</span></span>
+<span>Chauffeur <span style="color: #F2EDE4">{{sumDrv}}</span></span>
+<span>Options <span style="color: #F2EDE4">{{sumOpts}}</span></span>
+</div>
+<div style="display: flex; gap: 12px">
+<button onClick="{{back}}" style="min-height: 52px; padding: 12px 28px; border: 1px solid #3A342A; background: transparent; color: #F2EDE4; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase">{{backLabel}}</button>
+<sc-if value="{{showNext}}" hint-placeholder-val="{{ true }}">
+<button onClick="{{next}}" disabled="{{nextDisabled}}" style="min-height: 52px; padding: 12px 36px; border: none; background: {{accent}}; color: #070707; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600">Continuer →</button>
+</sc-if>
+</div>
+</div>
+</div>
+</sc-if>
+
+</div>
+</div>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#C9A96E","options":["#C9A96E","#D4B98A","#B8975A","#E6D3A3"]},"motion":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":9000}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lang: 'FR', phase: 'closed', step: 0, form: null, veh: 's25', drv: null, opts: {}, sent: false,
+      f: { date: '', time: '', from: '', to: '', pax: '', flight: '', name: '', phone: '', note: '' }
+    };
+    const autoplay = (el) => {
+      if (!el) return;
+      el.muted = true;
+      try { const p = el.play(); if (p && p.catch) p.catch(() => {}); } catch (e) {}
+    };
+    this.heroRef = autoplay;
+    this.allinRef = autoplay;
+    const field = (k) => (e) => {
+      const val = e && e.target ? e.target.value : '';
+      this.setState((st) => ({ f: { ...st.f, [k]: val } }));
+    };
+    this.setters = {};
+    ['date', 'time', 'from', 'to', 'pax', 'flight', 'name', 'phone', 'note'].forEach((k) => { this.setters[k] = field(k); });
+    this.openCfg = (preset) => this.setState({ phase: 'open', step: 0, sent: false, ...(preset || {}) });
+    this.closeCfg = () => {
+      this.setState({ phase: 'closing' });
+      clearTimeout(this.closeTimer);
+      this.closeTimer = setTimeout(() => this.setState({ phase: 'closed', sent: false }), 620);
+    };
+  }
+  componentWillUnmount() { clearTimeout(this.closeTimer); }
+  renderVals() {
+    const accent = this.props.accent ?? '#C9A96E';
+    const motion = this.props.motion ?? true;
+    const s = this.state;
+    const set = (patch) => this.setState(patch);
+    const noop = () => {};
+
+    const langs = ['FR', 'EN', 'AR', 'RU', 'DE'].map((l) => ({
+      l, color: l === s.lang ? accent : '#8E897F', pick: () => set({ lang: l })
+    }));
+
+    const fleet = [
+      { id: 'e21', name: 'Classe E', year: '2021', tag: 'Business · Transferts', img: '/_blob/71080b12aeaa220340865d875094f8ef' },
+      { id: 'e24', name: 'Classe E', year: '2024', tag: 'Business · Roadshow', img: '/_blob/f5b0d63c4ee757bb51cddcb5a84a77c9' },
+      { id: 'van', name: 'Van', year: '[ANNÉE]', tag: 'Familles · Groupes · Ski', img: '/_blob/40c18e69c50e48ba56412401b39cf466' },
+      { id: 's25', name: 'Classe S', year: '2025', tag: 'Signature · VIP', img: '/_blob/c9fd6db7515fc6ef7123fb81e1cfd441' }
+    ];
+    const selVeh = fleet.find((x) => x.id === s.veh) || fleet[3];
+    const vehOpts = fleet.map((v) => {
+      const on = v.id === s.veh;
+      return { ...v, border: on ? accent : '#2A251D', bg: on ? '#16130E' : '#0B0A08', pick: () => set({ veh: v.id }) };
+    });
+
+    const forms = [
+      { id: 'transfert', label: 'Transfert', desc: 'Aéroport, gare, hôtel. Du point A au point B. Chauffeur attribué par WVion.' },
+      { id: 'demi', label: 'Demi-journée', desc: 'Une demi-journée à disposition. Vous choisissez votre chauffeur.' },
+      { id: 'jour', label: 'Journée', desc: 'Une journée entière à disposition. Vous choisissez votre chauffeur.' },
+      { id: 'mensuel', label: 'Mensuel', desc: 'Abonnement privé ou corporate. Votre chauffeur attitré.' },
+      { id: 'h24', label: 'Accompagné 24h/24', desc: 'Un chauffeur dédié, jour et nuit, pendant tout votre séjour.' },
+      { id: 'allin', label: 'All-in-Now', desc: 'Urgence absolue. Toute l’équipe se mobilise immédiatement.' }
+    ];
+    const formCards = forms.map((f, i) => {
+      const on = f.id === s.form;
+      const red = f.id === 'allin';
+      return {
+        ...f,
+        num: (red ? '!' : '0' + (i + 1)) + (red ? ' · PRIORITÉ' : ''),
+        border: on ? (red ? '#D63A3A' : accent) : (red ? '#5A2222' : '#2A251D'),
+        bg: on ? (red ? '#1E0909' : '#16130E') : '#0B0A08',
+        numColor: red ? '#E07A7A' : (on ? accent : '#8E897F'),
+        pick: () => set({ form: f.id })
+      };
+    });
+
+    const opts = [
+      { id: 'garde', label: 'Garde du corps', note: 'Partenaire agréé · selon disponibilité' },
+      { id: 'tarmac', label: 'Accueil tarmac · jet privé', note: 'Terminal aviation d’affaires' },
+      { id: 'valises', label: 'Récupération des valises', note: 'Check-in à domicile' },
+      { id: 'enfants', label: 'Sièges enfants', note: 'Homologués, toutes tailles' },
+      { id: 'concierge', label: 'Conciergerie', note: 'Restaurants, clubs, billets' },
+      { id: 'multi', label: 'Chauffeur multilingue', note: 'FR · EN · AR · RU · DE' }
+    ];
+    const optList = opts.map((o) => {
+      const on = !!s.opts[o.id];
+      return {
+        ...o, on,
+        border: on ? accent : '#2A251D',
+        bg: on ? '#16130E' : '#0B0A08',
+        box: on ? accent : 'transparent',
+        tick: on ? '✓' : '',
+        toggle: () => this.setState((st) => ({ opts: { ...st.opts, [o.id]: !st.opts[o.id] } }))
+      };
+    });
+
+    const driversBase = [
+      { id: 'd1', name: '[PRÉNOM N.]', langs: '[FR · EN · …]', exp: '[X] ans', spec: 'Aéroport, jet privé, VIP' },
+      { id: 'd2', name: '[PRÉNOM N.]', langs: '[FR · AR · …]', exp: '[X] ans', spec: 'Délégations, roadshows' },
+      { id: 'd3', name: '[PRÉNOM N.]', langs: '[FR · RU · DE · …]', exp: '[X] ans', spec: 'Stations de ski, familles' }
+    ];
+    const drivers = driversBase.map((d) => {
+      const on = d.id === s.drv;
+      return {
+        ...d,
+        border: on ? accent : '#2A251D',
+        cardBg: on ? '#16130E' : '#0B0A08',
+        stateColor: on ? accent : '#8E897F',
+        btnLabel: on ? '✓ Sélectionné' : 'Choisir ce chauffeur',
+        pick: () => set({ drv: on ? null : d.id }),
+        pickAndOpen: () => this.openCfg({ drv: d.id, form: (s.form && s.form !== 'transfert' && s.form !== 'allin') ? s.form : 'jour' })
+      };
+    });
+    const autoOn = !s.drv;
+
+    const groups = [
+      { num: 'I', title: 'Aéroport & Voyage', items: [
+        { t: 'Accueil tarmac & jet privé', d: 'Votre chauffeur vous attend à la sortie de l’avion.' },
+        { t: 'Attente & dépôt à l’aéroport', d: 'Accueil personnalisé en zone arrivée, dépôt au départ.' },
+        { t: 'Check-in à domicile', d: 'Vos valises récupérées la veille, vous voyagez les mains libres.' },
+        { t: 'Ski & Riviera', d: 'Courchevel, Verbier, Gstaad, Zermatt, Megève, Monaco.' }
+      ] },
+      { num: 'II', title: 'Business', items: [
+        { t: 'Abonnement Corporate', d: 'Crédits d’heures mensuels, facturation entreprise.' },
+        { t: 'Roadshows & délégations', d: 'Plusieurs véhicules coordonnés pour banques, investisseurs et organisations.' },
+        { t: 'Chauffeur seul', d: 'Un chauffeur certifié pour conduire votre propre véhicule.' }
+      ] },
+      { num: 'III', title: 'Événements', items: [
+        { t: 'Salons & Galas', d: 'Forfaits événementiels avec flotte dédiée.' },
+        { t: 'Mariages', d: 'Classe S pour les mariés, Vans pour les invités.' }
+      ] },
+      { num: 'IV', title: 'Lifestyle', items: [
+        { t: 'Shopping privé', d: 'Rue du Rhône, votre chauffeur porte les sacs et vous attend.' },
+        { t: 'Accompagnement médical', d: 'Aéroport, clinique, hôtel. Discret et multilingue.' },
+        { t: 'Family & Kids', d: 'Sièges enfants, trajets école et activités.' },
+        { t: 'Excursions signature', d: 'Lavaux, Mont-Blanc, tour du Léman.' }
+      ] },
+      { num: 'V', title: 'Conciergerie', items: [
+        { t: 'Un seul contact', d: 'Votre chauffeur réserve restaurants, clubs et billets.' },
+        { t: 'Protection rapprochée', d: 'Par nos partenaires agréés, selon disponibilité.' }
+      ] }
+    ];
+
+    // Parcours
+    const isAllin = s.form === 'allin';
+    const canDrv = !!s.form && s.form !== 'transfert' && !isAllin;
+    const steps = isAllin
+      ? ['formule', 'allin']
+      : ['formule', 'vehicule'].concat(canDrv ? ['chauffeur'] : []).concat(['options', 'quand', 'recap']);
+    const idx = Math.min(s.step, steps.length - 1);
+    const cur = steps[idx];
+    const labels = { formule: 'Formule', vehicule: 'Véhicule', chauffeur: 'Chauffeur', options: 'Options', quand: 'Date & trajet', recap: 'Récapitulatif', allin: 'Urgence' };
+    const stepList = steps.map((k, i) => ({
+      label: labels[k],
+      num: '0' + (i + 1),
+      color: i === idx ? (isAllin && k === 'allin' ? '#E07A7A' : accent) : (i < idx ? '#CFC9BD' : '#5E594F'),
+      pick: i < idx ? () => set({ step: i, sent: false }) : noop
+    }));
+
+    const f = forms.find((x) => x.id === s.form);
+    const d = driversBase.find((x) => x.id === s.drv);
+    const chosenOpts = opts.filter((o) => s.opts[o.id]);
+    const nOpts = chosenOpts.length;
+    const drvLabel = !canDrv ? 'Attribué par WVion' : (d ? d.name : 'Choix WVion');
+    const ff = s.f;
+
+    const recapRows = [
+      { k: 'Formule', v: f ? f.label : '—' },
+      { k: 'Véhicule', v: selVeh.name + ' ' + selVeh.year },
+      { k: 'Chauffeur', v: drvLabel },
+      { k: 'Options', v: nOpts ? chosenOpts.map((o) => o.label).join(', ') : 'Aucune' },
+      { k: 'Date', v: ff.date ? ff.date + (ff.time ? ' · ' + ff.time : '') : 'À préciser' },
+      { k: 'Trajet', v: (ff.from || ff.to) ? (ff.from || '…') + ' → ' + (ff.to || '…') : 'À préciser' },
+      { k: 'Passagers', v: ff.pax || 'À préciser' }
+    ];
+    if (ff.flight) recapRows.push({ k: 'Vol', v: ff.flight });
+
+    const phase = s.phase;
+
+    return {
+      accent,
+      heroRef: this.heroRef,
+      allinRef: this.allinRef,
+      rootClass: motion ? '' : 'wv-still',
+      langs, fleet, vehOpts, formCards, optList, drivers, groups, selVeh, stepList, recapRows,
+      openMain: () => this.openCfg({}),
+      openAllin: () => this.openCfg({ form: 'allin', step: 1 }),
+      closeCfg: this.closeCfg,
+      cfgVisible: phase !== 'closed',
+      tvClass: phase === 'closing' ? 'wv-tv-off' : 'wv-tv-on',
+      progress: ((idx + 1) / steps.length * 100) + '%',
+      progressColor: isAllin ? '#D63A3A' : accent,
+      stepNum: (idx + 1) + ' / ' + steps.length,
+      isFormule: cur === 'formule',
+      isVehicule: cur === 'vehicule',
+      isChauffeur: cur === 'chauffeur',
+      isOptions: cur === 'options',
+      isQuand: cur === 'quand',
+      isRecap: cur === 'recap',
+      isAllinStep: cur === 'allin',
+      sent: s.sent,
+      notSent: !s.sent,
+      send: () => set({ sent: true }),
+      showFooter: !s.sent,
+      showNext: cur !== 'recap' && cur !== 'allin',
+      nextDisabled: cur === 'formule' && !s.form,
+      next: () => set({ step: idx + 1 }),
+      back: idx === 0 ? this.closeCfg : () => set({ step: idx - 1, sent: false }),
+      backLabel: idx === 0 ? 'Fermer' : '← Retour',
+      pickAuto: () => set({ drv: null }),
+      autoBorder: autoOn ? accent : '#3A342A',
+      autoStateColor: autoOn ? accent : '#8E897F',
+      autoLabel: autoOn ? '✓ Sélectionné' : 'Choisir cette option',
+      f: ff,
+      setDate: this.setters.date, setTime: this.setters.time, setFrom: this.setters.from, setTo: this.setters.to,
+      setPax: this.setters.pax, setFlight: this.setters.flight, setName: this.setters.name, setPhone: this.setters.phone, setNote: this.setters.note,
+      sumForm: f ? f.label : '',
+      sumFormShort: f ? f.label : '—',
+      sumVeh: selVeh.name + ' ' + selVeh.year,
+      sumDrv: drvLabel,
+      sumOpts: nOpts === 0 ? 'Aucune' : String(nOpts),
+      sumPrice: (s.form === 'transfert' || s.form === 'demi' || s.form === 'jour') ? '[PRIX] CHF' : 'Sur devis'
+    };
+  }
+}
+</script>
+</body>
+</html>

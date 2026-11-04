@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #070707;
+  --gold: #C9A96E;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--ink);
+  color: #F2EDE4;
+  font-family: var(--font-jost), 'Jost', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+}
+a:hover {
+  color: #F2EDE4;
+}
+
+/* Sélection de texte « Smoking » : or champagne + halo lumineux,
+   au lieu du bleu/blanc par défaut du navigateur. */
+::selection {
+  background: #C9A96E;
+  color: #070707;
+  text-shadow: 0 0 14px rgba(255, 243, 214, 0.65);
+}
+::-moz-selection {
+  background: #C9A96E;
+  color: #070707;
+  text-shadow: 0 0 14px rgba(255, 243, 214, 0.65);
+}
+/* Sur le titre doré scintillant, garder le texte visible sur l'or */
+.wv-shimmer::selection {
+  background: #070707;
+  color: #FFF3D6;
+  text-shadow: 0 0 16px rgba(201, 169, 110, 0.9);
+}
+.wv-shimmer::-moz-selection {
+  background: #070707;
+  color: #FFF3D6;
+  text-shadow: 0 0 16px rgba(201, 169, 110, 0.9);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* Focus clavier visible (accessibilité) — invisible à la souris */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+:focus-visible {
+  outline: 2px solid #C9A96E;
+  outline-offset: 2px;
+  border-radius: 1px;
+}
+
+/* ===== Direction artistique « Smoking » — animations ===== */
+
+.wv-serif {
+  font-family: var(--font-bodoni), 'Bodoni Moda', serif;
+}
+
+/* Texte doré qui scintille */
+.wv-shimmer {
+  background: linear-gradient(100deg, #8C7442 0%, #C9A96E 25%, #FFF3D6 45%, #C9A96E 60%, #8C7442 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: wvShimmer 6s linear infinite;
+}
+@keyframes wvShimmer {
+  0% { background-position: 150% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* Sceau circulaire qui tourne */
+.wv-spin {
+  animation: wvSpin 28s linear infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes wvSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Bandeau de destinations qui défile */
+.wv-marquee {
+  display: flex;
+  gap: 64px;
+  width: max-content;
+  animation: wvMarq 40s linear infinite;
+}
+@keyframes wvMarq {
+  to { transform: translateX(-50%); }
+}
+
+/* Reflet lumineux qui balaie les images */
+.wv-sweep {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  background: linear-gradient(90deg, transparent, rgba(255, 243, 214, 0.1), transparent);
+  animation: wvSweep 7s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes wvSweep {
+  0% { left: -35%; }
+  60%, 100% { left: 110%; }
+}
+
+/* Point rouge qui pulse */
+.wv-pulse {
+  animation: wvPulse 1.4s ease-in-out infinite;
+}
+@keyframes wvPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(214, 58, 58, 0.6); }
+  50% { opacity: 0.6; box-shadow: 0 0 0 10px rgba(214, 58, 58, 0); }
+}
+
+/* Entrée qui se soulève */
+.wv-rise {
+  animation: wvRise 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes wvRise {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Cartes qui se soulèvent au survol */
+.wv-card {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.5s;
+}
+.wv-card:hover {
+  transform: translateY(-8px);
+  border-color: #C9A96E;
+}
+
+/* Configurateur — ouverture « télé à l'ancienne » */
+.wv-tv-on {
+  animation: wvTvOn 0.95s cubic-bezier(0.7, 0, 0.2, 1) both;
+}
+@keyframes wvTvOn {
+  0% { transform: scale(0, 0.004); background: #FFF3D6; box-shadow: 0 0 90px 24px rgba(201, 169, 110, 0.95); }
+  30% { transform: scale(1, 0.004); background: #E6D3A3; box-shadow: 0 0 90px 24px rgba(201, 169, 110, 0.85); }
+  65% { transform: scale(1, 1); background: #1A160F; box-shadow: 0 0 0 0 rgba(201, 169, 110, 0); }
+  100% { transform: scale(1, 1); background: #070707; }
+}
+.wv-tv-on .wv-tv-content {
+  animation: wvFadeIn 0.55s 0.62s both;
+}
+.wv-tv-off {
+  animation: wvTvOff 0.6s cubic-bezier(0.7, 0, 0.2, 1) forwards;
+}
+@keyframes wvTvOff {
+  0% { transform: scale(1, 1); filter: brightness(1); }
+  45% { transform: scale(1, 0.004); filter: brightness(3); background: #E6D3A3; }
+  100% { transform: scale(0, 0.004); filter: brightness(4); background: #FFF3D6; }
+}
+.wv-tv-off .wv-tv-content {
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+
+/* Scanlines qui s'effacent */
+.wv-scan {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  background: repeating-linear-gradient(0deg, rgba(255, 243, 214, 0.06) 0 1px, transparent 1px 3px);
+  animation: wvScan 1.6s ease-out forwards;
+}
+@keyframes wvScan {
+  0%, 45% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Étapes du configurateur en fondu */
+.wv-step {
+  animation: wvFadeIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes wvFadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Masquage scrollbar discret dans le configurateur */
+.wv-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #2A251D transparent;
+}
+
+/* ===== prefers-reduced-motion : tout est figé ===== */
+@media (prefers-reduced-motion: reduce) {
+  .wv-shimmer,
+  .wv-spin,
+  .wv-marquee,
+  .wv-sweep,
+  .wv-pulse,
+  .wv-rise,
+  .wv-tv-on,
+  .wv-tv-on .wv-tv-content,
+  .wv-step,
+  .wv-card {
+    animation: none !important;
+    transition: none !important;
+  }
+  .wv-scan {
+    display: none;
+  }
+  .wv-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===== Navigation responsive ===== */
+.wv-nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.wv-nav-burger {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #3A342A;
+  background: transparent;
+  color: #F2EDE4;
+  align-items: center;
+  justify-content: center;
+}
+.wv-nav-drawer {
+  display: none;
+}
+@media (max-width: 920px) {
+  .wv-nav-desktop {
+    display: none;
+  }
+  .wv-nav-burger {
+    display: flex;
+  }
+  .wv-nav-drawer {
+    display: block;
+    border-top: 1px solid #1E1B16;
+    padding: 20px 32px 28px;
+    background: rgba(7, 7, 7, 0.96);
+  }
+}
+
+/* Barre d'étapes du configurateur : masquée sur petit écran
+   (l'indicateur « Étape x / n » + la barre de progression suffisent) */
+@media (max-width: 720px) {
+  .wv-cfg-steps {
+    display: none !important;
+  }
+}
+
+/* Révélations au scroll — cascade */
+.wv-reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+.wv-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
